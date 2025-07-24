@@ -127,7 +127,9 @@ END;
 
 
 -- Here the results
-(/Capture.JPG)
+
+-- Here the results
+![Capture](images/Capture.JPG)
 
 
 
