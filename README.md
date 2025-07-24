@@ -127,7 +127,7 @@ END;
 
 
 -- Here the results
-![Here the results](https://raw.githubusercontent.com/Nadonn/Bike-Trips/e39462323ea7a7c1bc9c7161d96e317eaa37ab78/Capture.JPG)
+![Here the results](https:/Capture.JPG)
 
 
 
