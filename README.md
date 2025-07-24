@@ -43,21 +43,21 @@ To determine how Cyclistic can leverage digital marketing to convert casual ride
 CREATE TABLE trips_cleaned
 LIKE trip_data.divvy_trips_2019_q1;
 
+
 -- Copy all data from original table into the new one
 INSERT INTO trips_cleaned
 SELECT *
 FROM trip_data.divvy_trips_2019_q1;
 
+
 -- Check for duplicate rows using trip_id
 -- If result set is empty → No duplicates found
 -- The result is is empthy 
-SELECT
-	trip_id,
-    Count(*) AS count
-FROM	
-	trips_cleaned
+SELECT trip_id,Count(*) AS count
+FROM  trips_cleaned
 group by trip_id
 HAVING count(*) > 1;
+
 
 -- Data Quality Check - Verify if any NULLs exist in key columns
 -- If difference = 0 → No missing data
@@ -69,6 +69,61 @@ COUNT(*)- COUNT(start_time) AS missind_start,
 COUNT(*)- COUNT(end_time) AS missind_end,
 COUNT(*)- COUNT(usertype) AS missind_usertype
 FROM trips_cleaned;
+
+
+
+-- Data provide trip duration , but I'm not sure what unit it's in.
+-- So, I decided to create a new column called 'trip_duration' and populate it using TIMESTAMPDIFF
+ALTER TABLE trips_cleaned
+ADD trip_duration INT;
+
+UPDATE trips_cleaned
+SET trip_duration = TIMESTAMPDIFF(MINUTE, start_time, end_time);
+
+
+-- Data only have birthyear , but I need an age column for my analysis.
+-- Adding age colume
+ALTER TABLE trips_cleaned
+ADD age INT;
+-- Update age colume details.
+UPDATE trips_cleaned
+SET age = YEAR(current_date()) - birthyear;
+
+
+-- Adding period_of_time colume
+-- I need to morning, Afternoon, Evening and Night for my analysis
+ALTER table trips_cleaned
+ADD period_of_time TEXT;
+-- Update period_of_time colume details.
+UPDATE trips_cleaned
+SET period_of_time = CASE
+    WHEN TIME(Start_time) >= '21:00:00' OR TIME(Start_time) <= '04:59:59' THEN 'Night'  -- between and cannot use between day, use OR instead!!
+    WHEN TIME(Start_time) BETWEEN '05:00:01' AND '11:59:59' THEN 'Morning'
+    WHEN TIME(Start_time) BETWEEN '12:00:00' AND '17:59:59' THEN 'Afternoon'
+    WHEN TIME(Start_time) BETWEEN '18:00:00' AND '20:59:59' THEN 'Evening'
+    ELSE 'Other'
+END;
+
+
+-- Adding Day colume
+ALTER table trips_cleaned
+ADD Day Text;
+-- Update Day colume details.
+UPDATE trips_cleaned
+SET Day = date_format(start_time, '%a');
+
+
+-- Adding weekday_weekly colume
+-- for my anlysis process.
+ALTER TABLE trips_cleaned
+ADD weekday_weekly TEXT;
+-- Update weekday_weekly colume.
+UPDATE trips_cleaned
+SET weekday_weekly = CASE
+	WHEN day = 'Sat' THEN 'weekend'
+    WHEN day = 'Sun' THEN 'weekend'
+	ELSE 'weekday'
+END;
 
 
 
