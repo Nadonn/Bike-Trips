@@ -87,6 +87,9 @@ UPDATE trips_cleaned SET routh = CONCAT(from_station_name, ' to ', to_station_na
 
 ** Usage Behavior: Members vs Casuals
 
+-- Average age
+SELECT usertype, CEiL(AVG(age)) AS avg_age FROM trips_cleaned GROUP BY usertype;
+
 -- Average trip duration
 SELECT usertype, ROUND(AVG(trip_duration), 2) AS avg_trip_mins FROM trips_cleaned GROUP BY usertype;
 
@@ -131,7 +134,9 @@ LIMIT 10;
 ```
 
 ## 🔍 Step 4: Key Insights Summary
-- Total sharing: Subscribers use 61195 trips and customers use 978 trips 
+- Total sharing: Subscribers use 61195 trips and customers use 978 trips
+
+- Average Age: subscribers is a litle bit old than our customers (~44 years old for Subscribers and ~37 for customers)
 
 - Trip Duration: Casual riders ride longer (avg. ~35 mins) vs Subscribers (~12 mins)
 
@@ -161,12 +166,16 @@ LIMIT 10;
 - Members frequently use stations located near business districts or public transportation hubs as their starting and ending points.
 - Casual riders typically choose stations closer to tourist attractions or recreational areas.
 
+
 ### Objective 2: Identify characteristics of casual riders who might benefit from annual membership.
 - High Frequency of Use: They use our bikes almost every day, or at least very frequently.
 - Shorter Trip Durations: Their ride lengths are shorter than the typical casual rider's average of 35 minutes, often falling closer to the member's average of 12-15 minutes.
 - Repetitive Routes: They tend to use the same routes repeatedly, even if not daily.
 - Weekday Usage: While primarily casual users, they occasionally use bikes on weekdays, especially during commuting hours.
-   
+
+  
+### Objective 3: Suggest digital marketing strategies to convert casual riders into members
+- Our casual customers are, on average, around 37 years old. That means they might not be as active on social media as younger folks. Plus, since many are travelers, they're often busy exploring and aren't glued to their phones checking social media all the time. So, we shouldn't put all our marketing money into social media. Instead, a smarter move would be to reach them where they are: by partnering with GPS or navigation apps that people frequently use when they're looking for directions or exploring. That way, we can connect with them right when they need a ride.
 
 
 
