@@ -36,3 +36,40 @@ To determine how Cyclistic can leverage digital marketing to convert casual ride
 
 
 
+## 💻 Data Cleaning & Preparation (SQL)
+
+```sql
+-- Create a new table to avoid changing the original
+CREATE TABLE trips_cleaned
+LIKE trip_data.divvy_trips_2019_q1;
+
+-- Copy all data from original table into the new one
+INSERT INTO trips_cleaned
+SELECT *
+FROM trip_data.divvy_trips_2019_q1;
+
+-- Check for duplicate rows using trip_id
+-- If result set is empty → No duplicates found
+-- The result is is empthy 
+SELECT
+	trip_id,
+    Count(*) AS count
+FROM	
+	trips_cleaned
+group by trip_id
+HAVING count(*) > 1;
+
+-- Data Quality Check - Verify if any NULLs exist in key columns
+-- If difference = 0 → No missing data
+-- The result is = 0 
+SELECT 
+COUNT(*) AS total_row,
+COUNT(*)- COUNT(trip_id) AS missind_trip_id,
+COUNT(*)- COUNT(start_time) AS missind_start,
+COUNT(*)- COUNT(end_time) AS missind_end,
+COUNT(*)- COUNT(usertype) AS missind_usertype
+FROM trips_cleaned;
+
+
+
+
