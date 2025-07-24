@@ -121,9 +121,14 @@ ADD weekday_weekly TEXT;
 UPDATE trips_cleaned
 SET weekday_weekly = CASE
 	WHEN day = 'Sat' THEN 'weekend'
-    WHEN day = 'Sun' THEN 'weekend'
+	WHEN day = 'Sun' THEN 'weekend'
 	ELSE 'weekday'
 END;
+
+
+-- Here the results
+![Here the results](https://i.postimg.cc/zv20ZMG4/Capture.jpg)
+
 
 
 
