@@ -127,7 +127,7 @@ END;
 
 
 -- Here the results
-![Here the results](/Capture.JPG)
+(/Capture.JPG)
 
 
 
