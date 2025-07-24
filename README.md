@@ -131,7 +131,7 @@ LIMIT 10;
 ```
 
 ## 🔍 Step 4: Key Insights Summary
-- Total shraing: Subscribers use 61195 trips and customers use 978 trips 
+- Total sharing: Subscribers use 61195 trips and customers use 978 trips 
 
 - Trip Duration: Casual riders ride longer (avg. ~35 mins) vs Subscribers (~12 mins)
 
@@ -160,6 +160,13 @@ LIMIT 10;
 #### Station Usage
 - Members frequently use stations located near business districts or public transportation hubs as their starting and ending points.
 - Casual riders typically choose stations closer to tourist attractions or recreational areas.
+
+### Objective 2: Identify characteristics of casual riders who might benefit from annual membership.
+- High Frequency of Use: They use our bikes almost every day, or at least very frequently.
+- Shorter Trip Durations: Their ride lengths are shorter than the typical casual rider's average of 35 minutes, often falling closer to the member's average of 12-15 minutes.
+- Repetitive Routes: They tend to use the same routes repeatedly, even if not daily.
+- Weekday Usage: While primarily casual users, they occasionally use bikes on weekdays, especially during commuting hours.
+   
 
 
 
