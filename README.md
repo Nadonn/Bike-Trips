@@ -129,7 +129,9 @@ END;
 -- Here the results
 
 -- Here the results
-![Capture](images/Capture.JPG)
+-- Here the results
+![Bike Trips Results](Capture.JPG)
+
 
 
 
