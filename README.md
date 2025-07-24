@@ -17,10 +17,9 @@
 ---
 
 
+## Step 1:Data Quality Checks
 
 ```sql
-
-* Step 1: Data Preparation 
 
 -- Create working table
 CREATE TABLE trips_cleaned LIKE divvy_trips_2019_q1;
@@ -41,10 +40,11 @@ SELECT
   COUNT(*) - COUNT(usertype) AS missing_usertype
 FROM trips_cleaned;
 
+```
 
+## Step 2: Feature Engineering
 
-
-* Step 2: Feature Engineering
+```sql
 
 -- Add trip duration (in minutes)
 ALTER TABLE trips_cleaned ADD trip_duration INT;
@@ -78,8 +78,12 @@ END;
 ALTER TABLE trips_cleaned ADD routh TEXT;
 UPDATE trips_cleaned SET routh = CONCAT(from_station_name, ' to ', to_station_name);
 
+```
 
-** Step 3: Exploratory Data Analysis (EDA)
+
+## Step 3: Exploratory Data Analysis (EDA)
+
+```sql
 
 ** Usage Behavior: Members vs Casuals
 
@@ -89,17 +93,27 @@ SELECT usertype, ROUND(AVG(trip_duration), 2) AS avg_trip_mins FROM trips_cleane
 -- Total trips
 SELECT usertype, COUNT(*) AS total_trips FROM trips_cleaned GROUP BY usertype;
 
--- Usage by day of week
-SELECT usertype, day, COUNT(*) AS total_Usage FROM trips_cleaned GROUP BY usertype, day ORDER BY total_Usage DESC;
+-- Time of Day Usage 
+SELECT usertype,	period_of_time, COUNT(*) AS total_Usage FROM trips_cleaned GROUP BY usertype, period_of_time ORDER BY total_Usage DESC;
 
 -- Usage by time of day
 SELECT usertype, period_of_time, COUNT(*) AS total_Usage FROM trips_cleaned GROUP BY usertype, period_of_time ORDER BY total_Usage DESC;
 
+-- Usage by day of week
+SELECT usertype, day, COUNT(*) AS total_Usage FROM trips_cleaned GROUP BY usertype, day ORDER BY total_Usage DESC;
+
+
+
+
+
 
 ** Station Analysis (Top 10)
+
+-- Top 10 routh
+SELECT distinct routh, count(*) AS total_trips FROM trips_cleaned GROUP BY routh ORDER BY total_trips DESC LiMIT 10;
+
 -- Top 10 start stations by usertype
-SELECT usertype, from_station_name, COUNT(*) AS total_usage
-FROM trips_cleaned
+SELECT usertype, from_station_name, COUNT(*) AS total_usage FROM trips_cleaned
 WHERE usertype = 'Subscriber'
 GROUP BY from_station_name
 ORDER BY total_usage DESC
@@ -114,6 +128,14 @@ WHERE usertype = 'Customer'
 GROUP BY to_station_name
 ORDER BY total_usage DESC
 LIMIT 10;
+
+-- (Repeat for 'Subscriber')
+
+```
+
+
+
+
 
 
 
