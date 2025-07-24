@@ -127,7 +127,7 @@ END;
 
 
 -- Here the results
-![Here the results](https:/Capture.JPG)
+![Here the results](/Capture.JPG)
 
 
 
