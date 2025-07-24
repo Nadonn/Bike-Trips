@@ -17,7 +17,7 @@
 ---
 
 
-## Step 1:Data Quality Checks
+### Step 1:Data Quality Checks
 
 ```sql
 
@@ -42,7 +42,7 @@ FROM trips_cleaned;
 
 ```
 
-## Step 2: Feature Engineering
+### Step 2: Feature Engineering
 
 ```sql
 
@@ -81,7 +81,7 @@ UPDATE trips_cleaned SET routh = CONCAT(from_station_name, ' to ', to_station_na
 ```
 
 
-## Step 3: Exploratory Data Analysis (EDA)
+### Step 3: Exploratory Data Analysis (EDA)
 
 ```sql
 
@@ -133,10 +133,12 @@ LIMIT 10;
 
 ```
 
-## 🔍 Step 4: Key Insights Summary
-- Total sharing: Subscribers use 61195 trips and customers use 978 trips
+---
 
-- Average Age: subscribers is a litle bit old than our customers (~44 years old for Subscribers and ~37 for customers)
+### 🔍 Step 4: Key Insights Summary
+- Total Usage: Subscribers accounted for 61,195 trips, while Casual Riders made 978 trips.
+
+- Average Age: Subscribers are slightly older than Casual Riders, with an average age of ~44 years old compared to ~37 for Casual Riders.
 
 - Trip Duration: Casual riders ride longer (avg. ~35 mins) vs Subscribers (~12 mins)
 
@@ -148,14 +150,16 @@ LIMIT 10;
 
 - Repeated Routes: Members tend to have recurring routes (commute patterns)
 
-  
-## ✅ Step 5: Answering the Objectives & Recommendations
+  ---
+
+  ### ✅ Step 5: Answering the Objectives & Recommendations
 
 ### Objective 1: Understand how annual members and casual riders use Cyclistic bikes differently.
  
 #### Trip Duration:
 - Members average about 12 minutes per trip, indicating their use for short, quick commutes.
 - Casual riders consistently cycle for much longer, averaging around 35 minutes per trip. This suggests their usage is more for leisure or extended sightseeing.
+  Basically, members use bikes for their daily trips, making them quick and routine. Casual riders, however, use them for longer, fun rides like exploring or sightseeing.
 #### Route Patterns
 - Members tend to use the same routes repeatedly, especially during morning and afternoon hours. This aligns with typical daily commuting patterns.
 - Casual riders do not show clear or repetitive route patterns, reinforcing the assumption that they use the bikes for exploration or recreational travel rather than fixed daily commutes.
@@ -166,6 +170,7 @@ LIMIT 10;
 - Members frequently use stations located near business districts or public transportation hubs as their starting and ending points.
 - Casual riders typically choose stations closer to tourist attractions or recreational areas.
 
+  ---
 
 ### Objective 2: Identify characteristics of casual riders who might benefit from annual membership.
 - High Frequency of Use: They use our bikes almost every day, or at least very frequently.
@@ -173,9 +178,11 @@ LIMIT 10;
 - Repetitive Routes: They tend to use the same routes repeatedly, even if not daily.
 - Weekday Usage: While primarily casual users, they occasionally use bikes on weekdays, especially during commuting hours.
 
-  
+  ---
 ### Objective 3: Suggest digital marketing strategies to convert casual riders into members
 - Our casual customers are, on average, around 37 years old. That means they might not be as active on social media as younger folks. Plus, since many are travelers, they're often busy exploring and aren't glued to their phones checking social media all the time. So, we shouldn't put all our marketing money into social media. Instead, a smarter move would be to reach them where they are: by partnering with GPS or navigation apps that people frequently use when they're looking for directions or exploring. That way, we can connect with them right when they need a ride.
+
+---
 
 
 
