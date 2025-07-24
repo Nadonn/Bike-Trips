@@ -127,7 +127,8 @@ END;
 
 
 -- Here the results
-[![Image alt](https://github.com/user-attachments/assets/6d3d406b-30d4-4298-947d-26d0e185afa6)](https://github.com/Nadonn/Bike-Trips/blob/e39462323ea7a7c1bc9c7161d96e317eaa37ab78/Capture.JPG)
+![Here the results](https://raw.githubusercontent.com/Nadonn/Bike-Trips/e39462323ea7a7c1bc9c7161d96e317eaa37ab78/Capture.JPG)
+
 
 
 
