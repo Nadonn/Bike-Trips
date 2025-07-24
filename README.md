@@ -103,14 +103,11 @@ SELECT usertype, period_of_time, COUNT(*) AS total_Usage FROM trips_cleaned GROU
 SELECT usertype, day, COUNT(*) AS total_Usage FROM trips_cleaned GROUP BY usertype, day ORDER BY total_Usage DESC;
 
 
-
-
-
-
 ** Station Analysis (Top 10)
 
 -- Top 10 routh
-SELECT distinct routh, count(*) AS total_trips FROM trips_cleaned GROUP BY routh ORDER BY total_trips DESC LiMIT 10;
+SELECT distinct usertype, routh, count(*) AS total_trips FROM trips_cleaned GROUP BY usertype, routh ORDER BY total_trips DESC LIMIT 10;
+-- (Repeat for 'Customer')
 
 -- Top 10 start stations by usertype
 SELECT usertype, from_station_name, COUNT(*) AS total_usage FROM trips_cleaned
@@ -132,6 +129,38 @@ LIMIT 10;
 -- (Repeat for 'Subscriber')
 
 ```
+
+## 🔍 Step 4: Key Insights Summary
+- Total shraing: Subscribers use 61195 trips and customers use 978 trips 
+
+- Trip Duration: Casual riders ride longer (avg. ~35 mins) vs Subscribers (~12 mins)
+
+- Time Patterns: Subscribers ride more on weekdays about ~10k trips per day, 
+                during commuting hours (~22k trips on Morning and ~26k trips on Afternoon; 
+                casual riders peak on Friday (~200 trips) and Saturday (~300 trips)
+
+- Station Use: Members use consistent stations (office/train hubs transfering), casuals prefer tourist/leisure spots
+
+- Repeated Routes: Members tend to have recurring routes (commute patterns)
+
+  
+## ✅ Step 5: Answering the Objectives & Recommendations
+
+### Objective 1: Understand how annual members and casual riders use Cyclistic bikes differently.
+ 
+#### Trip Duration:
+- Members average about 12 minutes per trip, indicating their use for short, quick commutes.
+- Casual riders consistently cycle for much longer, averaging around 35 minutes per trip. This suggests their usage is more for leisure or extended sightseeing.
+#### Route Patterns
+- Members tend to use the same routes repeatedly, especially during morning and afternoon hours. This aligns with typical daily commuting patterns.
+- Casual riders do not show clear or repetitive route patterns, reinforcing the assumption that they use the bikes for exploration or recreational travel rather than fixed daily commutes.
+#### Time of Usage
+- Members show peak usage during weekdays, particularly in the morning and evening rush hours, which corresponds to typical commuting times.
+- Casual riders have their highest usage on Fridays and Saturdays, periods when people generally engage in leisure activities or travel.
+#### Station Usage
+- Members frequently use stations located near business districts or public transportation hubs as their starting and ending points.
+- Casual riders typically choose stations closer to tourist attractions or recreational areas.
+
 
 
 
