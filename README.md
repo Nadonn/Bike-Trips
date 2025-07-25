@@ -24,7 +24,7 @@ An interactive dashboard was created using Tableau to visually support the analy
 - Top 10 start stations
 - top 10 end stations
 
- [View the Tableau Dashboard](https://public.tableau.com/authoring/TRIPS_17534161166800/Dashboard1#1)
+ [View the Tableau Dashboard](https://public.tableau.com/views/TRIPS_17534161166800/Dashboard1#1)
 
 
 ---
