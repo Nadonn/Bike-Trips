@@ -14,6 +14,19 @@
 - Tableau (Data Visualization)
 - GitHub (Project versioning & documentation)
 
+## 📊 Interactive Dashboard (Tableau)
+
+An interactive dashboard was created using Tableau to visually support the analysis and reveal patterns between members and casual riders.
+
+- Breakdown by user type 
+- Relationship Between Trip Duration and Rider Age
+- Peak Usage Times: Subscribers vs. Casual Riders
+- Top 10 start stations
+- top 10 end stations
+
+🔗 [View the Tableau Dashboard](https://public.tableau.com/authoring/TRIPS_17534161166800/Dashboard1#1)
+
+
 ---
 
 
