@@ -1,6 +1,6 @@
-# 🚲 Cyclistic Bike-Share Analysis Project
+#  Cyclistic Bike-Share Analysis Project
 
-## 🎯 Project Objectives
+##  Project Objectives
 
 1. **Understand how annual members and casual riders use Cyclistic bikes differently.**
 2. **Identify characteristics of casual riders who might benefit from annual membership.**
@@ -8,13 +8,13 @@
 
 ---
 
-## 🛠️ Tools & Technologies
+##  Tools & Technologies
 
 - SQL (Data Cleaning, Transformation, Analysis)
 - Tableau (Data Visualization)
 - GitHub (Project versioning & documentation)
 
-## 📊 Interactive Dashboard (Tableau)
+##  Interactive Dashboard (Tableau)
 
 An interactive dashboard was created using Tableau to visually support the analysis and reveal patterns between members and casual riders.
 
@@ -24,7 +24,7 @@ An interactive dashboard was created using Tableau to visually support the analy
 - Top 10 start stations
 - top 10 end stations
 
-🔗 [View the Tableau Dashboard](https://public.tableau.com/authoring/TRIPS_17534161166800/Dashboard1#1)
+ [View the Tableau Dashboard](https://public.tableau.com/authoring/TRIPS_17534161166800/Dashboard1#1)
 
 
 ---
@@ -148,7 +148,7 @@ LIMIT 10;
 
 ---
 
-### 🔍 Step 4: Key Insights Summary
+###  Step 4: Key Insights Summary
 - Total Usage: Subscribers accounted for 61,195 trips, while Casual Riders made 978 trips.
 
 - Average Age: Subscribers are slightly older than Casual Riders, with an average age of ~44 years old compared to ~37 for Casual Riders.
@@ -165,7 +165,7 @@ LIMIT 10;
 
   ---
 
-  ### ✅ Step 5: Answering the Objectives & Recommendations
+  ###  Step 5: Answering the Objectives & Recommendations
 
 ### Objective 1: Understand how annual members and casual riders use Cyclistic bikes differently.
  
